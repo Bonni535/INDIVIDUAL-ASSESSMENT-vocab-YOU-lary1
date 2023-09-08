@@ -1,0 +1,7 @@
+APP_API_KEY="AIzaSyCx8hkXdE_6yr2oBBrEOhfa9VISt2x-LBA"
+APP_AUTH_DOMAIN="vocab-you-lary2-23531.firebaseapp.com"
+APP_DATABASE_URL="https://vocab-you-lary2-23531-default-rtdb.firebaseio.com"
+APP_PROJECT_ID="vocab-you-lary2-23531"
+APP_STORAGE_BUCKET="vocab-you-lary2-23531.appspot.com"
+APP_APP_ID="1:259302528943:web:b6d6e1951147166e20815a"
+APP_MEASUREMENT_ID="G-67C0Z4661G"
