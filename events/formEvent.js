@@ -21,7 +21,7 @@ const formEvents = () => {
             getEntries().then(showEntries);
         });
       });
-
+    }
       if (e.target.id.includes("update-entry")) {
         const [, firebaseKey] = e.target.id.split("--");
         console.warn("CLICKED UPDATE ENTRY", e.target.id);
@@ -38,8 +38,7 @@ const formEvents = () => {
           getEntries().then(showEntries);
         });
       }
+    })
     }
-    });
-};
 
 export default formEvents;
