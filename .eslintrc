@@ -3,7 +3,7 @@
     "ecmaVersion": 9,
     "sourceType": "module"
   },
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "prettier"],
   "globals": {
     "document": true,
     "window": true,

@@ -4,8 +4,9 @@ import { showEntries } from "../pages/entries";
 
 const domEvents = () => {
     document.querySelector("main-container").addEventListener("click", (e) => {
-        if (e.target.dispatchEvent.includes("delete-entry")){
-            if (window.confirm("Want to delete?")) {
+        if (e.target.id.includes("delete-entry-btn")){
+            if (window.confirm("Want to delete?")) // eslint-disable-line no-alert
+             {
                 console.warn("CLICKED DELETE ENTRY", e.target.id);
                 console.warn(e.target.id.split("--"));
                 const splitArr = e.target.id.split("--");
