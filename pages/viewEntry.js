@@ -10,10 +10,18 @@ const viewEntry = (obj) => {
     <h5 class="card-title">Card title</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <div class="mt-5">
+       <i id="edit-entry-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+       <i id="delete-entry-btn--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+     </div>
+     <div class="text-white ms-5 details">
+     <h5>${obj.title} by ${obj.entryObject.title} ${obj.entryObject.category}</h5>
+     <p>${obj.description || ''}</p>
+     <hr>
   </div>
 </div>`;
 
 renderToDom('#view', domstring);
 };
+
+export default viewEntry;

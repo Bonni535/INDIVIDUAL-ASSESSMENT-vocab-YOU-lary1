@@ -1,17 +1,17 @@
 import { getEntries } from "../api/entryData";
 import renderToDom from "../utils/renderToDom";
 
-const selectLanguage = () => {
+const selectLanguage = (uid) => {
     let domstring = ` <label for="language">Select a Language</label>
     <select class="form-control" id="language_id" required>
     <option value="">Select a Language</option>`;
 
-    getEntries().then((entriesArray) => {
+    getEntries(uid).then((entriesArray) => {
         entriesArray.forEach((entry) => {
             domstring += `
              <option
               value="${language.firebaseKey}"
-              ${languageID === language.firebaseKey ? "selected" : ""}>
+              ${categoryID === category.firebaseKey ? "selected" : ""}>
            </option> `;
         });
 
