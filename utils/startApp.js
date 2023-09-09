@@ -2,10 +2,11 @@ import { getEntry } from "../api/entryData";
 import { showEntries } from "../pages/entries";
 import domBuilder from "../shared/domBuilder";
 import navBar from "../shared/navBar";
-import domEvents 
-import formEvents
-import navigationEvents
+import domEvents from "../events/domEvents";
+import formEvents from "../events/formEvent";
+//import navigationEvents
 import { showEntries } from "../pages/entries";
+import loginButton from "../components/loginButton";
 
 const startApp = () => {
     domBuilder();
@@ -13,7 +14,8 @@ const startApp = () => {
     formEvents();
     navBar();
     logOutButton();
-    navigationEvents();
+    //navigationEvents();
+    loginButton();
 
 
  getEntry().then((entries) => showEntries(entries))
