@@ -1,7 +1,7 @@
 import { createEntry, getEntries, updateEntry } from "../api/entryData";
 import { showEntries } from "../pages/entries";
 
-const formEvents = () => {
+const formEvents = (user) => {
     document.querySelector("#main-container").addEventListener("submit", (e) => {
         e.preventDefault();
     if (e.target.id.includes("submit-entry")) {
@@ -18,7 +18,7 @@ const formEvents = () => {
         const patchPayload = { firebaseKey: name };
 
         updateEntry(patchPayload).then(() => {
-            getEntries().then(showEntries);
+            getEntries(user.uid).then(showEntries);
         });
       });
     }
@@ -35,7 +35,7 @@ const formEvents = () => {
         };
   
         updateEntry(payload).then(() => {
-          getEntries().then(showEntries);
+          getEntries(user.uid).then(showEntries);
         });
       }
     })

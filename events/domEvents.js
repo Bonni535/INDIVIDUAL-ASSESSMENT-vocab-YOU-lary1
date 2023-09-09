@@ -2,7 +2,7 @@ import { deleteEntry, getEntries, getSingleEntry } from "../api/entryData";
 import addEntryForm from "../forms/addEntryForm";
 import { showEntries } from "../pages/entries";
 
-const domEvents = () => {
+const domEvents = (user) => {
     document.querySelector("main-container").addEventListener("click", (e) => {
         if (e.target.id.includes("delete-entry-btn")){
             if (window.confirm("Want to delete?")) // eslint-disable-line no-alert
@@ -13,18 +13,18 @@ const domEvents = () => {
                 console.warn("splitArr", splitArr);
                 const [, firebaseKey] = e.targed.id.split("--");
                 deleteEntry(firebaseKey)
-                .then(() => getEntries())
+                .then(() => getEntries(user.uid))
                 .then((entries) => showEntries(entries));
             }
         }
         
     if (e.target.id.includes("add-entry-btn")) {
-        addEntryForm();
+        addEntryForm(user.uid);
     }
 
     if (e.target.id.includes("edit-entry-btn")) {
      const [, firebaseKey] = e.target.id.split("--");
-     getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(entryObj));
+     getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(user.uid, entryObj));
     }
 
     if (e.target.id.includes("view-entry-btn")) {

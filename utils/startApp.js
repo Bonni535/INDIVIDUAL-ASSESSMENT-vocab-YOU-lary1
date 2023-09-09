@@ -3,20 +3,21 @@ import { showEntries } from "../pages/entries";
 import domBuilder from "../shared/domBuilder";
 import domEvents from "../events/domEvents";
 import formEvents from "../events/formEvent";
-// import navigationEvents
-import loginButton from "../components/loginButton";
+// import loginButton from "../components/loginButton";
 import navBar from "../shared/navBar";
+import navigationEvents from "../events/navigationEvents";
+import logoutButton from "../components/logoutButton";
 
-const startApp = () => {
-    domBuilder();
-    domEvents();
-    formEvents();
-    // navigationEvents();
-    loginButton();
+const startApp = (user) => {
+    domBuilder(user);
+    domEvents(user);
+    formEvents(user);
+    navigationEvents(user);
+    logoutButton();
     navBar();
 
   // document.querySelector('#app').innerHTML = 'bananas'
-  getEntries().then((entries) => showEntries(entries))
+  getEntries(user.uid).then((entries) => showEntries(entries))
 };
 
 export default startApp;
