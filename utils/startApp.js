@@ -12,9 +12,9 @@ const startApp = (user) => {
     domBuilder(user);
     domEvents(user);
     formEvents(user);
-    navigationEvents(user);
     logoutButton();
     navBar();
+    navigationEvents(user);
 
   // document.querySelector('#app').innerHTML = 'bananas'
   getEntries(user.uid).then((entries) => showEntries(entries))

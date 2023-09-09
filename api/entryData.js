@@ -57,7 +57,7 @@ const updateEntry = (payload) =>
 
   const createEntry = (payload) => 
   new Promise((resolve, reject) => {
-    fetch(`${endpoint}/entry.json`, {
+    fetch(`${endpoint}/entries.json`, {
         method: "POST",
         headers: {
             "Content-Type": "application.json",

@@ -3,7 +3,7 @@ import addEntryForm from "../forms/addEntryForm";
 import { showEntries } from "../pages/entries";
 
 const domEvents = (user) => {
-    document.querySelector("main-container").addEventListener("click", (e) => {
+    document.querySelector("#main-container").addEventListener("click", (e) => {
         if (e.target.id.includes("delete-entry-btn")){
             if (window.confirm("Want to delete?")) // eslint-disable-line no-alert
              {
@@ -11,7 +11,7 @@ const domEvents = (user) => {
                 console.warn(e.target.id.split("--"));
                 const splitArr = e.target.id.split("--");
                 console.warn("splitArr", splitArr);
-                const [, firebaseKey] = e.targed.id.split("--");
+                const [, firebaseKey] = e.target.id.split("--");
                 deleteEntry(firebaseKey)
                 .then(() => getEntries(user.uid))
                 .then((entries) => showEntries(entries));
