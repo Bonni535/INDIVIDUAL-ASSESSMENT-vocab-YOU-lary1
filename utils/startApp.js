@@ -7,6 +7,7 @@ import formEvents from "../events/formEvent";
 import navBar from "../shared/navBar";
 import navigationEvents from "../events/navigationEvents";
 import logoutButton from "../components/logoutButton";
+import filterButtons from "../components/filterButtons";
 
 const startApp = (user) => {
     domBuilder(user);
@@ -14,6 +15,7 @@ const startApp = (user) => {
     formEvents(user);
     logoutButton();
     navBar();
+    filterButtons();
     navigationEvents(user);
 
   // document.querySelector('#app').innerHTML = 'bananas'
