@@ -31,6 +31,45 @@ const domEvents = (user) => {
         console.warn("VIEW ENTRY", e.target.id);
         console.warn(e.target.id.split("--"));
       }
+    
+    if (e.target.id.includes("react-filter-btn")) {
+        console.warn("SHOW REACT ENTRIES", e.target.id);
+        getEntries(user.uid).then((entries) => {
+            const reactEntries= []
+            entries.forEach((entry) => {
+                if (entry.category==="react") {
+                    reactEntries.push(entry)
+                }
+            });
+            showEntries(reactEntries)
+        })
+    }
+
+        if (e.target.id.includes("javaScript-filter-btn")) {
+            console.warn("SHOW JAVASCRIPT ENTRIES", e.target.id);
+            getEntries(user.uid).then((entries) => {
+                const javaScriptEntries= []
+                entries.forEach((entry) => {
+                    if (entry.category==="javaScript") {
+                        javaScriptEntries.push(entry)
+                    }
+                });
+                showEntries(javaScriptEntries)
+            })
+        }
+            
+        if (e.target.id.includes("c.-filter-btn")) {
+            console.warn("SHOW C. ENTRIES", e.target.id);
+            getEntries(user.uid).then((entries) => {
+                const cEntries= []
+                entries.forEach((entry) => {
+                    if (entry.category==="c.") {
+                            cEntries.push(entry)
+                     }
+                });
+                showEntries(cEntries)
+            })
+        };
     });
 };
 

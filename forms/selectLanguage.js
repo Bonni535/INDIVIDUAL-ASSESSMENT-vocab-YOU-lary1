@@ -3,7 +3,7 @@ import renderToDom from "../utils/renderToDom";
 
 const selectLanguage = (uid) => {
     let domstring = ` <label for="language">Select a Language</label>
-    <select class="form-control" id="language_id" required>
+    <select class="form-control" id="category-id" required>
     <option value="">Select a Language</option>`;
 
     getEntries(uid).then((entriesArray) => {
@@ -17,7 +17,7 @@ const selectLanguage = (uid) => {
 
         domstring += "</select>";
 
-        renderToDom("#select-language", domstring);
+        renderToDom("#select-category", domstring);
     });
 };
 
