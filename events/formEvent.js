@@ -27,7 +27,6 @@ const formEvents = (user) => {
         console.warn(firebaseKey);
         const payload = {
           title: document.querySelector("#title").value,
-          author_id: document.querySelector("#author_id").value,
           category: document.querySelector("#category").value,
           description: document.querySelector("#description").value,
           firebaseKey,
