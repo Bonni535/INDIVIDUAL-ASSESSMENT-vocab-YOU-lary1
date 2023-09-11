@@ -24,7 +24,7 @@ const domEvents = (user) => {
 
     if (e.target.id.includes("edit-entry-btn")) {
      const [, firebaseKey] = e.target.id.split("--");
-     getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(user.uid, entryObj));
+     getSingleEntry(firebaseKey).then((entryObj) => addEntryForm(entryObj));
     }
 
     if (e.target.id.includes("view-entry-btn")) {

@@ -15,9 +15,9 @@ const addEntryForm = (obj = {}) => {
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea class="form-control" placeholder="Entry Description" id="description" style="height: 100px" value="${
+          <textarea class="form-control" placeholder="Entry Description" id="description" style="height: 100px">${
             obj.description || ""
-          }"></textarea>
+          }</textarea>
         </div>
         <div class="form-group">
         <label for="language">Select a Language</label>
